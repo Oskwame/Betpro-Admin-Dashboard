@@ -1,3 +1,4 @@
+import CorrectScoreTable from "@/components/correct-score-table/CorrectScoreTable";
 import DashboardLayout from "@/components/dashboard-layout/DashboardLayout";
 
 export default function CorrectScores (){
@@ -10,6 +11,7 @@ export default function CorrectScores (){
                         <p className=" text-muted-foreground">List of correct score predictions</p>
                     </div>
                 </div>
+                <CorrectScoreTable/>
             </div>
         </DashboardLayout>
     )

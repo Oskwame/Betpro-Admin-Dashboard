@@ -32,7 +32,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
     { name: "Top Predictions", href: "/top-predictions", icon: BarChart3 },
     { name: "History", href: "/history", icon: History },
     { name: "Correct Scores", href: "/correct-scores", icon: CheckCircle },
-    { name: "League Predictions", href: "/leagues", icon: Trophy },
+    { name: "League Predictions", href: "/top-league-predictions", icon: Trophy },
     { name: "VIP Section", href: "/vip", icon: Crown },
     { name: "Subscriptions", href: "/subscriptions", icon: Users },
   ]

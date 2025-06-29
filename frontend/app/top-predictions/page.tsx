@@ -1,7 +1,7 @@
 import DashboardLayout from "@/components/dashboard-layout/DashboardLayout"
 import TopPredictionsTable from "@/components/top-prediction-table/TopPredictionTable"
 
-export default function AddPrediction(){
+export default function TopPrediction(){
     return(
       <DashboardLayout>
       <div className="flex-1 space-y-4 p-4 pt-6 md:p-8">
