@@ -43,7 +43,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   ]
 
   return (
-    <div className="flex h-screen bg-gray-100">
+        <div className="flex h-screen bg-gray-100">
       {sidebarOpen && (
         <div className="fixed inset-0 z-40 lg:hidden">
           <div
@@ -68,7 +68,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
           </button>
         </div>
 
-        <nav className="mt-8">
+        <nav className="mt-8 overflow-y-auto max-h-[calc(100vh-160px)]">
           <div className="px-4">
             <h3 className="text-xl font-semibold text-gray-500 uppercase tracking-wider">Dashboard</h3>
             <div className="mt-2 space-y-1">
@@ -130,7 +130,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
           </div>
         </nav>
 
-        <div className="absolute bottom-0 w-full p-4 border-t border-gray-200">
+         <div className="absolute bottom-0 w-full p-4 border-t border-gray-200">
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <div className="h-8 w-8 rounded-full bg-orange-500 flex items-center justify-center">
