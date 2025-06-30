@@ -156,54 +156,62 @@ const leaguePredictions ={
 }
  const TopLeagueTable =() =>{
     return(
-        <Card>
-            <CardHeader>
-                <CardTitle>League Predictuions</CardTitle>
-            </CardHeader>
-            <CardContent>
-                <Tabs defaultValue="Premier League">
-                    <TabsList className="grid grid-cols-5 mb-4">
-                        <TabsTrigger value="Premier League">Premier League</TabsTrigger>
-                        <TabsTrigger value="La Liga">La Liga</TabsTrigger>
-                        <TabsTrigger value="Serie A">Serie A</TabsTrigger>
-                        <TabsTrigger value="Bundesliga">Bundesliga</TabsTrigger>
-                        <TabsTrigger value="Ligue 1">Ligue 1</TabsTrigger>
-                    </TabsList>
-                    {Object.entries(leaguePredictions).map(([league, predictions]) => (
-            <TabsContent key={league} value={league}>
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Match</TableHead>
-                    <TableHead>Time</TableHead>
-                    <TableHead>Prediction</TableHead>
-                    <TableHead>Odds</TableHead>
-                    <TableHead>Confidence</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                {predictions.map((prediction) => (
-                    <TableRow key={prediction.id}>
-                        <TableCell className="font-medium">
-                        {prediction.homeTeam} vs {prediction.awayTeam}
-                            </TableCell>
-                            <TableCell>{prediction.time}</TableCell>
-                            <TableCell>{prediction.prediction}</TableCell>
-                            <TableCell>{prediction.odds}</TableCell>
-                            <TableCell>
-                        <Badge variant={prediction.confidence === "High" ? "default" : "outline"}>
-                        {prediction.confidence}
-                        </Badge>
-                        </TableCell>
-                    </TableRow>
-                ))}
-                </TableBody>
-              </Table>
-            </TabsContent>
-          ))}
-        </Tabs>
-            </CardContent>
-        </Card>
+       <Card>
+  <CardHeader>
+    <CardTitle>League Predictions</CardTitle>
+  </CardHeader>
+  <CardContent>
+    <Tabs defaultValue="Premier League">
+     <TabsList
+  className="flex gap-2 overflow-x-auto whitespace-nowrap mb-4 px-1 md:grid md:grid-cols-5 md:gap-0 scrollbar-hide"
+>
+  {["Premier League", "La Liga", "Serie A", "Bundesliga", "Ligue 1"].map((league) => (
+    <TabsTrigger
+      key={league}
+      value={league}
+      className="min-w-[120px] flex-shrink-0 md:min-w-0 data-[state=active]:shadow-lg data-[state=active]:bg-white data-[state=active]:text-black"
+    >
+      {league}
+    </TabsTrigger>
+  ))}
+</TabsList>
+
+      {Object.entries(leaguePredictions).map(([league, predictions]) => (
+        <TabsContent key={league} value={league}>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Match</TableHead>
+                <TableHead>Time</TableHead>
+                <TableHead>Prediction</TableHead>
+                <TableHead>Odds</TableHead>
+                <TableHead>Confidence</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {predictions.map((prediction) => (
+                <TableRow key={prediction.id}>
+                  <TableCell className="font-medium">
+                    {prediction.homeTeam} vs {prediction.awayTeam}
+                  </TableCell>
+                  <TableCell>{prediction.time}</TableCell>
+                  <TableCell>{prediction.prediction}</TableCell>
+                  <TableCell>{prediction.odds}</TableCell>
+                  <TableCell>
+                    <Badge variant={prediction.confidence === "High" ? "default" : "outline"}>
+                      {prediction.confidence}
+                    </Badge>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TabsContent>
+      ))}
+    </Tabs>
+  </CardContent>
+</Card>
+
     )
  }
  export default TopLeagueTable

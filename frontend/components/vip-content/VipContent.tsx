@@ -142,24 +142,36 @@ const  VipContent =()=> {
 
       {/* Main Content */}
       <Card>
-        <CardHeader>
-          <div className="flex items-center justify-between">
-            <div>
-              <CardTitle>VIP Predictions Management</CardTitle>
-              <CardDescription>Manage premium predictions for VIP subscribers</CardDescription>
-            </div>
-            <div className="flex items-center gap-2">
-              <Button variant="outline" size="sm" onClick={() => setIsSettingsDialogOpen(true)}>
-                <Settings className="mr-2 h-4 w-4" />
-                VIP Settings
-              </Button>
-              <Button onClick={() => setIsAddDialogOpen(true)}>
-                <Plus className="mr-2 h-4 w-4" />
-                Add VIP Prediction
-              </Button>
-            </div>
-          </div>
-        </CardHeader>
+       <CardHeader>
+  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <div>
+      <CardTitle className="text-lg sm:text-xl">VIP Predictions Management</CardTitle>
+      <CardDescription className="text-sm sm:text-base">
+        Manage premium predictions for VIP subscribers
+      </CardDescription>
+    </div>
+
+    <div className="flex flex-col sm:flex-row gap-2 sm:gap-2 w-full sm:w-auto">
+      <Button
+        variant="outline"
+        size="sm"
+        className="w-full sm:w-auto"
+        onClick={() => setIsSettingsDialogOpen(true)}
+      >
+        <Settings className="mr-2 h-4 w-4" />
+        VIP Settings
+      </Button>
+      <Button
+        className="bg-orange-500 text-white w-full sm:w-auto"
+        onClick={() => setIsAddDialogOpen(true)}
+      >
+        <Plus className="mr-2 h-4 w-4" />
+        Add VIP Prediction
+      </Button>
+    </div>
+  </div>
+</CardHeader>
+
         <CardContent>
           <Tabs defaultValue="all" className="space-y-4">
             <TabsList>
@@ -395,7 +407,7 @@ const  VipContent =()=> {
             </div>
           </div>
     <DialogFooter>
-        <Button onClick={handleAddPrediction}>Create VIP Prediction</Button>
+        <Button className="bg-orange-500" onClick={handleAddPrediction}>Create VIP Prediction</Button>
     </DialogFooter>
     </DialogContent>
 </Dialog>
