@@ -3,13 +3,8 @@ import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import {
-  Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader,
-  DialogTitle, DialogTrigger
-} from "@/components/ui/dialog"
-import {
-  Select, SelectContent, SelectItem, SelectTrigger, SelectValue
-} from "@/components/ui/select"
+import {Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader,DialogTitle, DialogTrigger} from "@/components/ui/dialog"
+import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { CalendarIcon, Crown, Edit, MoreHorizontal, Plus, Trash2, UserCheck, UserX, Users } from "lucide-react"
 import { Label } from "@/components/ui/label"
@@ -29,6 +24,45 @@ const subscriptions = [
     startDate: "2024-01-15",
     endDate: "2024-01-16",
     amount: 4.99,
+    autoRenew: true,
+  },
+  {
+    id: 2,
+    userId: "user_002",
+    email: "jane.smith@email.com",
+    name: "Jane Smith",
+    plan: "Weekly VIP",
+    status: "active",
+    startDate: "2024-01-10",
+    endDate: "2024-01-17",
+    amount: 19.99,
+    paymentMethod: "PayPal",
+    autoRenew: false,
+  },
+  {
+    id: 3,
+    userId: "user_003",
+    email: "mike.johnson@email.com",
+    name: "Mike Johnson",
+    plan: "Daily VIP",
+    status: "expired",
+    startDate: "2024-01-14",
+    endDate: "2024-01-15",
+    amount: 4.99,
+    paymentMethod: "Credit Card",
+    autoRenew: false,
+  },
+  {
+    id: 4,
+    userId: "user_004",
+    email: "sarah.wilson@email.com",
+    name: "Sarah Wilson",
+    plan: "Monthly VIP",
+    status: "active",
+    startDate: "2024-01-01",
+    endDate: "2024-01-31",
+    amount: 49.99,
+    paymentMethod: "Credit Card",
     autoRenew: true,
   },
 ]
